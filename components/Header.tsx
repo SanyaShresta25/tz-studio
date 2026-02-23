@@ -6,157 +6,35 @@ export default function Header() {
   const [active, setActive] = useState('HOME')
 
   return (
-    // Full-width brown bar — the entire header background
-    <header style={{
-      background: '#2c1a0e',
-      position: 'relative',
-      zIndex: 50,
-      display: 'flex',
-      alignItems: 'stretch',
-      height: '64px',
-    }}>
+    <header className="relative z-50 w-full px-3 pt-3 sm:px-5">
+      <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between rounded-2xl border border-[#d8b89455] bg-[linear-gradient(180deg,#f5ebd7_0%,#ead9bf_100%)] px-4 shadow-[0_8px_24px_rgba(0,0,0,0.24)] sm:px-6">
+        <div className="mr-4 flex min-w-[140px] flex-col leading-none">
+          <span className="font-['Fredoka_One'] text-[2rem] text-[#241912]">TripZine</span>
+          <span className="ml-8 -mt-1 text-[0.72rem] font-extrabold tracking-[0.18em] text-[#4a3427]">WHAT IF</span>
+        </div>
 
-      {/* ── Logo area — sits in the brown section, left side ── */}
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '0 20px 0 18px',
-        flexShrink: 0,
-        position: 'relative',
-        zIndex: 3,
-        // The bottom-right corner curves down to meet the parchment pill
-        borderBottomRightRadius: '28px',
-        background: '#2c1a0e',
-        minWidth: '140px',
-      }}>
-        <span style={{
-          fontFamily: "'Fredoka One', cursive",
-          fontSize: '1.75rem',
-          color: '#f5ede0',
-          lineHeight: 1,
-          textShadow: '1px 2px 0 #5c3d1e',
-          whiteSpace: 'nowrap',
-        }}>
-          ✦ TripZine
-        </span>
-        <span style={{
-          fontFamily: "'Caveat', cursive",
-          fontSize: '0.72rem',
-          color: '#d4a843',
-          letterSpacing: '0.28em',
-          paddingLeft: '1.9rem',
-          fontWeight: 700,
-          marginTop: '1px',
-        }}>
-          WHAT IF
-        </span>
-      </div>
-
-      {/* ── Parchment pill: nav + login ──
-          Uses a pseudo-shape: the left edge has a concave bite taken out
-          matching the logo block's bottom-right curve, achieved with
-          a box + negative corner radius trick via border-radius on a wrapper.
-      ── */}
-      <div style={{
-        position: 'relative',
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-      }}>
-        {/* The concave connector piece — brown bg, sits on top-left of pill */}
-        {/* This square covers the gap, then a white circle cuts the curve */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '32px',
-          height: '32px',
-          background: '#2c1a0e',
-          zIndex: 2,
-          // Bottom-right circle cutout via radial-gradient trick
-          borderBottomRightRadius: '50%',
-          // The parchment peeks from behind it
-        }} />
-
-        {/* Main parchment pill body */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(180deg, #f2e4ca 0%, #e8d4b0 100%)',
-          borderRadius: '0 0 28px 28px',
-          boxShadow: 'inset 0 -2px 4px rgba(44,26,14,0.07), inset 0 1px 0 rgba(255,255,255,0.5)',
-          zIndex: 1,
-        }} />
-
-        {/* Nav + Login — sit on top of the pill */}
-        <div style={{
-          position: 'relative',
-          zIndex: 3,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          width: '100%',
-          padding: '0 20px 0 28px',
-        }}>
-          {/* Dot separator */}
-          <span style={{ color: '#a0673a', fontSize: '0.5rem', marginRight: '8px', opacity: 0.5 }}>●</span>
-
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '0px', flex: 1 }}>
+        <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
+          <nav className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto rounded-xl bg-[linear-gradient(180deg,#4a372d_0%,#2d211b_100%)] p-1 [scrollbar-width:none]">
             {navLinks.map((link) => (
               <a
                 key={link}
                 href="#"
-                onClick={e => { e.preventDefault(); setActive(link) }}
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontWeight: link === active ? 900 : 700,
-                  fontSize: '0.87rem',
-                  letterSpacing: '0.04em',
-                  color: link === active ? '#1a0e05' : '#7a5535',
-                  padding: '5px 14px',
-                  textDecoration: 'none',
-                  transition: 'color 0.15s',
-                  whiteSpace: 'nowrap',
-                  borderBottom: link === active ? '2px solid #8b4513' : '2px solid transparent',
+                onClick={(e) => {
+                  e.preventDefault()
+                  setActive(link)
                 }}
-                onMouseEnter={e => {
-                  if (link !== active) (e.currentTarget as HTMLAnchorElement).style.color = '#2c1a0e'
-                }}
-                onMouseLeave={e => {
-                  if (link !== active) (e.currentTarget as HTMLAnchorElement).style.color = '#7a5535'
-                }}
+                className="relative whitespace-nowrap rounded-lg px-3 py-2 text-sm font-bold tracking-[0.04em] text-[#d9c5ad] transition hover:text-[#f7e8d3]"
+                style={{ color: active === link ? '#f5e8d3' : undefined }}
               >
                 {link}
+                {active === link && (
+                  <span className="absolute bottom-1 left-3 right-3 h-[2px] rounded-full bg-[#f3e2cc]" />
+                )}
               </a>
             ))}
           </nav>
 
-          <button
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontWeight: 800,
-              fontSize: '0.82rem',
-              letterSpacing: '0.1em',
-              color: '#2c1a0e',
-              border: '2px solid #5c3d1e',
-              background: 'transparent',
-              padding: '5px 20px',
-              borderRadius: '20px',
-              cursor: 'pointer',
-              transition: 'all 0.15s',
-              flexShrink: 0,
-              marginRight: '8px',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = '#2c1a0e'
-              e.currentTarget.style.color = '#f5ede0'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = '#2c1a0e'
-            }}
-          >
+          <button className="h-9 min-w-[104px] flex-shrink-0 rounded-full border-2 border-[#4e3b2f] bg-[linear-gradient(180deg,#f4e7d2_0%,#e7d5bc_100%)] px-4 text-sm font-extrabold tracking-[0.05em] text-[#2f221b] transition hover:bg-[linear-gradient(180deg,#efe0c8_0%,#e1ccb0_100%)]">
             LOGIN
           </button>
         </div>
@@ -164,4 +42,3 @@ export default function Header() {
     </header>
   )
 }
-
