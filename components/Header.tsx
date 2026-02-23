@@ -6,15 +6,79 @@ export default function Header() {
   const [active, setActive] = useState('HOME')
 
   return (
-    <header className="relative z-50 w-full px-3 pt-3 sm:px-5">
-      <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between rounded-2xl border border-[#d8b89455] bg-[linear-gradient(180deg,#f5ebd7_0%,#ead9bf_100%)] px-4 shadow-[0_8px_24px_rgba(0,0,0,0.24)] sm:px-6">
-        <div className="mr-4 flex min-w-[140px] flex-col leading-none">
-          <span className="font-['Fredoka_One'] text-[2rem] text-[#241912]">TripZine</span>
-          <span className="ml-8 -mt-1 text-[0.72rem] font-extrabold tracking-[0.18em] text-[#4a3427]">WHAT IF</span>
+    <header
+      style={{
+        position: 'relative',
+        zIndex: 50,
+        padding: '10px 18px 0',
+        background:
+          'radial-gradient(circle at 20% -50%, rgba(255,255,255,0.35), transparent 45%), #5b4335',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          background: 'linear-gradient(180deg, #f5ebd7 0%, #eee0c8 100%)',
+          borderRadius: '18px 18px 0 0',
+          border: '1px solid rgba(92,61,30,0.4)',
+          boxShadow:
+            '0 3px 8px rgba(44,26,14,0.28), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(91,67,53,0.15)',
+          height: '58px',
+          padding: '0 16px 0 20px',
+          gap: '18px',
+        }}
+      >
+        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1, minWidth: '158px' }}>
+          <span
+            style={{
+              fontFamily: "'Fredoka One', cursive",
+              fontSize: '2.2rem',
+              color: '#1f1510',
+              letterSpacing: '0.01em',
+              transform: 'skewX(-8deg)',
+              textShadow: '0 1px 0 rgba(255,255,255,0.3)',
+            }}
+          >
+            TripZine
+          </span>
+          <span
+            style={{
+              fontSize: '0.95rem',
+              letterSpacing: '0.1em',
+              fontWeight: 800,
+              color: '#3f3128',
+              marginLeft: '40px',
+              marginTop: '-2px',
+            }}
+          >
+            WHAT IF
+          </span>
         </div>
 
-        <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
-          <nav className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto rounded-xl bg-[linear-gradient(180deg,#4a372d_0%,#2d211b_100%)] p-1 [scrollbar-width:none]">
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'stretch',
+            justifyContent: 'space-between',
+            minWidth: 0,
+          }}
+        >
+          <nav
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '2px',
+              background: 'linear-gradient(180deg, #49362d 0%, #2b1f19 100%)',
+              borderRadius: '14px',
+              padding: '4px 8px',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12)',
+              overflowX: 'auto',
+              scrollbarWidth: 'none',
+            }}
+          >
             {navLinks.map((link) => (
               <a
                 key={link}
@@ -23,18 +87,56 @@ export default function Header() {
                   e.preventDefault()
                   setActive(link)
                 }}
+                style={{
+                  position: 'relative',
+                  textDecoration: 'none',
+                  color: link === active ? '#f5ebd7' : '#d6c5ad',
+                  fontSize: '0.96rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.03em',
+                  padding: '8px 14px',
+                  borderRadius: '10px',
+                  whiteSpace: 'nowrap',
+                }}
                 className="relative whitespace-nowrap rounded-lg px-3 py-2 text-sm font-bold tracking-[0.04em] text-[#d9c5ad] transition hover:text-[#f7e8d3]"
                 style={{ color: active === link ? '#f5e8d3' : undefined }}
               >
                 {link}
-                {active === link && (
-                  <span className="absolute bottom-1 left-3 right-3 h-[2px] rounded-full bg-[#f3e2cc]" />
+                {link === active && (
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: '14px',
+                      right: '14px',
+                      bottom: '3px',
+                      height: '2px',
+                      borderRadius: '999px',
+                      background: '#f5ebd7',
+                      opacity: 0.95,
+                    }}
+                  />
                 )}
               </a>
             ))}
           </nav>
 
-          <button className="h-9 min-w-[104px] flex-shrink-0 rounded-full border-2 border-[#4e3b2f] bg-[linear-gradient(180deg,#f4e7d2_0%,#e7d5bc_100%)] px-4 text-sm font-extrabold tracking-[0.05em] text-[#2f221b] transition hover:bg-[linear-gradient(180deg,#efe0c8_0%,#e1ccb0_100%)]">
+          <button
+            style={{
+              marginLeft: '14px',
+              height: '34px',
+              minWidth: '108px',
+              borderRadius: '999px',
+              border: '2px solid #544237',
+              background: 'linear-gradient(180deg, #f3e8d3 0%, #e9dbc2 100%)',
+              color: '#34251d',
+              fontWeight: 800,
+              letterSpacing: '0.06em',
+              fontSize: '0.9rem',
+              cursor: 'pointer',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)',
+              flexShrink: 0,
+            }}
+          >
             LOGIN
           </button>
         </div>
