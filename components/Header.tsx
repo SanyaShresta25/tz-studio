@@ -98,6 +98,8 @@ export default function Header() {
                   borderRadius: '10px',
                   whiteSpace: 'nowrap',
                 }}
+                className="relative whitespace-nowrap rounded-lg px-3 py-2 text-sm font-bold tracking-[0.04em] text-[#d9c5ad] transition hover:text-[#f7e8d3]"
+                style={{ color: active === link ? '#f5e8d3' : undefined }}
               >
                 {link}
                 {link === active && (
