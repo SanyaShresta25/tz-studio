@@ -1,0 +1,26 @@
+/* DEFAULT (neutral gold theme) */
+:root {
+  --bg: #0e0a0a;
+  --accent: #c9843a;
+  --accent2: #e8b96a;
+  --text: #e8ddd0;
+  --muted: #7a6a58;
+}
+
+
+/* MALE THEME → GOLD + BLUE */
+
+.theme-male {
+  --accent: #3aa0ff;
+  --accent2: #8bc5ff;
+  --text: #dfefff;
+}
+
+
+/* FEMALE THEME → GOLD + PINK */
+
+.theme-female {
+  --accent: #ff7aa8;
+  --accent2: #ffc1d6;
+  --text: #ffe6f0;
+}
