@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import "./tripzine.css"
 import "./dark-main.css"
+import "./animations.css"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: 'TripZine – What If',
@@ -14,7 +16,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body>{children}</body>
+
+      <body>
+
+        {/* Petal animation container */}
+        <div id="petals-layer"></div>
+
+        {children}
+
+        {/* Load animation script */}
+        <Script src="/animations.js" strategy="afterInteractive" />
+
+      </body>
     </html>
   )
 }

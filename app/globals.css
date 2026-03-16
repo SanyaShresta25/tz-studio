@@ -154,3 +154,66 @@ body::before {
   background: rgba(44, 26, 14, 0.06);
   transform: translateY(-1px);
 }
+.footer{
+  background:white;
+  color:#cfcfcf;
+  padding:40px 60px;
+  font-family:'Poppins', sans-serif;
+}
+
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.footer-left{
+  max-width:420px;
+}
+
+.company{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.footer-logo{
+  width:35px;
+}
+
+.company-name{
+  color:#fff;
+  font-weight:500;
+}
+
+.footer-right{
+  text-align:right;
+}
+
+.social-icons a{
+  margin-left:12px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.footer-links{
+  margin-top:10px;
+}
+
+.footer-links a{
+  margin-left:15px;
+  text-decoration:none;
+  color:#cfcfcf;
+  font-size:13px;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.powered{
+  margin-top:10px;
+  font-size:12px;
+  opacity:0.7;
+}

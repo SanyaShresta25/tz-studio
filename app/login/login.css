@@ -97,22 +97,13 @@ body {
   flex-shrink: 0;
   border-right: 1px solid rgba(50,25,8,.6);
 }
-.logo-sparkle {
-  font-size: 14px; color: var(--gold);
-  animation: sparkSpin 2.6s ease-in-out infinite;
-  margin-top: -14px;
-}
+
 @keyframes sparkSpin {
   0%,100% { opacity:1; transform:scale(1) rotate(0deg); }
   50%     { opacity:.35; transform:scale(.65) rotate(22deg); }
 }
 .logo-block { display:flex; flex-direction:column; align-items:center; line-height:1; }
-.logo-title {
-  font-family: 'Satisfy', cursive;
-  font-size: 36px; color: var(--text);
-  text-shadow: 0 0 40px rgba(201,132,58,.45), 1px 2px 0 rgba(0,0,0,.5);
-  letter-spacing: -.01em;
-}
+
 .logo-sub {
   font-size: 9px; letter-spacing: .34em;
   color: var(--text-muted); text-transform: uppercase;
