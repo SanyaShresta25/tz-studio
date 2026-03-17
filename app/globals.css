@@ -154,3 +154,10 @@ body::before {
   background: rgba(44, 26, 14, 0.06);
   transform: translateY(-1px);
 }
+
+.footer {
+  width: 100%;
+  padding: 40px;
+  background: #0f0b13;
+  color: #f3e6d3;
+}
