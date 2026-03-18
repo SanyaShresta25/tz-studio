@@ -1,8 +1,8 @@
 'use client'
 
-import { useRouter } from "next/navigation"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function Header() {
 
@@ -17,14 +17,14 @@ export default function Header() {
 
     <div className="logo-block">
 
-      <Image
-        src="/tz-logo.png"
-        alt="TripZine Logo"
-        width={200}
-        height={200}
-        className="logo-img"
-        priority
-      />
+  <Image
+  src="/tz-logo.png"
+  alt="TripZine Logo"
+  width={200}
+  height={60}
+  style={{ marginTop: '20px' }} // Increase/decrease pixels as needed
+  priority
+/>
 
     </div>
 
