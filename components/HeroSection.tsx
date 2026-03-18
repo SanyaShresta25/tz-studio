@@ -111,7 +111,7 @@ export default function HeroSection() {
               ✦ Start Your TripZine ✦
             </button>
             <button className="rounded-full border-2 border-[rgba(239,205,173,0.35)] bg-transparent px-8 py-3 text-base font-bold text-[rgba(239,216,191,0.84)] transition hover:border-[rgba(239,205,173,0.65)] hover:text-[#f8e5ce] sm:min-w-[250px] sm:text-xl">
-              View Examples
+              See It Live
             </button>
           </div>
         </div>
