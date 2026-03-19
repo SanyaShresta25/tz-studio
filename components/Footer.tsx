@@ -1,20 +1,18 @@
 export default function Footer() {
   return (
     <footer className="footer">
-
       <div className="footer-container">
 
         {/* LEFT SIDE */}
         <div className="footer-left">
 
           <div className="company">
-            <img src="/logo.png" className="footer-logo" alt="Design Webtech"/>
-            <span className="company-name">Design Webtech</span>
+            <img src="/logo.png" className="footer-logo" alt="TripZine"/>
+            <span className="company-name">TripZine</span>
           </div>
 
           <p className="address">
-            #120/34/1, 5th Main, Above IDFC Bank, Sector 7,
-            HSR Layout, Bengaluru - 560102
+            #120/34/1, 5th Main, HSR Layout, Bengaluru - 560102
           </p>
 
           <p className="contact">
@@ -22,15 +20,14 @@ export default function Footer() {
           </p>
 
           <p className="email">
-            ✉ support@designwebtech.com
+            ✉ support@tripzine.com
           </p>
 
           <p className="copyright">
-            News Portal © 2026. All rights reserved.
+            TripZine © 2026. All rights reserved.
           </p>
 
         </div>
-
 
         {/* RIGHT SIDE */}
         <div className="footer-right">
@@ -55,13 +52,12 @@ export default function Footer() {
           </div>
 
           <p className="powered">
-            Powered by <span>Design Webtech</span>
+            Powered by <span>TripZine</span>
           </p>
 
         </div>
 
       </div>
-
     </footer>
   )
 }

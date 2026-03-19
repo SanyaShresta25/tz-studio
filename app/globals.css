@@ -154,11 +154,13 @@ body::before {
   background: rgba(44, 26, 14, 0.06);
   transform: translateY(-1px);
 }
-.footer{
-  background:white;
-  color:#cfcfcf;
-  padding:40px 60px;
-  font-family:'Poppins', sans-serif;
+
+.footer {
+  width: 100%;
+  padding: 40px 60px;
+  background: #0f0b13;
+  color: #f3e6d3;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-container{
